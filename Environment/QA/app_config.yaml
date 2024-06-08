@@ -1,0 +1,14 @@
+app_config:
+      url:  "https://www.demoblaze.com/"
+
+Signup:
+      name: "hafsfiosjcksj"
+      password: "hafsfiosjcksj@123"
+      name1: "samidha"
+      password2: "pourfhh@123"
+
+Login:
+      name: "tikai"
+      password: "tikai123"
+      name1: "tikai"
+      password2: "tikai23"

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.12.3 on win32)" generated="20240608 21:43:08.388" rpa="false" schemaversion="2">
+<suite id="s1" name="Web Auto" source="C:\Users\Shree\PycharmProjects\pythonProject5\Script\web_auto.robot">
+<test id="s1-t1" name="User SignUp:Signup with valid details">
+<kw name="User_SignUp_with_valid_details" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:43:15.349" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="6eb3bbaaa705c177b6395e941d7cdaaa")&gt;</msg>
+<status status="PASS" starttime="20240608 21:43:08.628" endtime="20240608 21:43:15.349"/>
+</kw>
+<kw name="Click On Signup" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Signup.name}</arg>
+<arg>${Signup.password}</arg>
+<status status="PASS" starttime="20240608 21:43:15.349" endtime="20240608 21:43:30.787"/>
+</kw>
+<kw name="Verify Signup" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:43:30.791" level="INFO">signup success</msg>
+<status status="PASS" starttime="20240608 21:43:30.787" endtime="20240608 21:43:30.792"/>
+</kw>
+<status status="PASS" starttime="20240608 21:43:08.628" endtime="20240608 21:43:30.792"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>signup</tag>
+<status status="PASS" starttime="20240608 21:43:08.627" endtime="20240608 21:43:30.792"/>
+</test>
+<test id="s1-t2" name="User SignUp:Signup with Invalid details">
+<kw name="User_SignUp_with_Invalid_details" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:43:37.262" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="8e072316c4f088dbf19e4f331239df6c")&gt;</msg>
+<status status="PASS" starttime="20240608 21:43:30.795" endtime="20240608 21:43:37.262"/>
+</kw>
+<kw name="Check Signup" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Signup.name1}</arg>
+<arg>${Signup.password2}</arg>
+<status status="PASS" starttime="20240608 21:43:37.262" endtime="20240608 21:43:52.671"/>
+</kw>
+<kw name="Verify Invalid Signup" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:43:52.686" level="INFO">This user already exist.</msg>
+<status status="PASS" starttime="20240608 21:43:52.671" endtime="20240608 21:43:52.687"/>
+</kw>
+<status status="PASS" starttime="20240608 21:43:30.795" endtime="20240608 21:43:52.687"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>signup2</tag>
+<status status="PASS" starttime="20240608 21:43:30.793" endtime="20240608 21:43:52.688"/>
+</test>
+<test id="s1-t3" name="User login:Signup with valid details">
+<kw name="Positive_scenario_User_login_with_valid_credentials" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:44:03.795" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="9bd2e16fb74217b64252f8798ee6199a")&gt;</msg>
+<status status="PASS" starttime="20240608 21:43:57.684" endtime="20240608 21:44:03.795"/>
+</kw>
+<kw name="Log In With Valid Credentials" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:44:03.796" endtime="20240608 21:44:29.239"/>
+</kw>
+<status status="PASS" starttime="20240608 21:43:52.693" endtime="20240608 21:44:29.240"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>login1</tag>
+<status status="PASS" starttime="20240608 21:43:52.691" endtime="20240608 21:44:29.241"/>
+</test>
+<test id="s1-t4" name="User login:Signup with invalid credentials">
+<kw name="Negative_scenario_Attempt_to_login_with_invalid_credentials" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:44:34.707" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="add5b7bc71bc37d9b9506b929d6a682f")&gt;</msg>
+<status status="PASS" starttime="20240608 21:44:29.248" endtime="20240608 21:44:34.707"/>
+</kw>
+<kw name="Attempt To Log In With Invalid Credentials" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name1}</arg>
+<arg>${Login.password2}</arg>
+<msg timestamp="20240608 21:45:00.127" level="INFO">Alert Text: Wrong password.</msg>
+<status status="PASS" starttime="20240608 21:44:34.708" endtime="20240608 21:45:00.127"/>
+</kw>
+<status status="PASS" starttime="20240608 21:44:29.246" endtime="20240608 21:45:00.127"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>login2</tag>
+<status status="PASS" starttime="20240608 21:44:29.244" endtime="20240608 21:45:00.128"/>
+</test>
+<test id="s1-t5" name="Attempt to checkout without adding any products to the cart">
+<kw name="checkout_without_adding_any_products_to_the_cart" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:45:08.519" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="d9ed07e6819ec1e3a07d823ce6258814")&gt;</msg>
+<status status="PASS" starttime="20240608 21:45:00.130" endtime="20240608 21:45:08.519"/>
+</kw>
+<kw name="User Login" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:45:08.519" endtime="20240608 21:45:33.905"/>
+</kw>
+<kw name="Without Adding Any Products To The Cart" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:45:54.596" level="INFO">Cart is empty. Test Passed!</msg>
+<status status="PASS" starttime="20240608 21:45:33.905" endtime="20240608 21:45:54.596"/>
+</kw>
+<status status="PASS" starttime="20240608 21:45:00.130" endtime="20240608 21:45:54.597"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>empty</tag>
+<status status="PASS" starttime="20240608 21:45:00.129" endtime="20240608 21:45:54.598"/>
+</test>
+<test id="s1-t6" name="Adding products to the shopping cart">
+<kw name="Navigate_to_the_last_page_select_the_last_product_and_add_the_product_to_the_cart" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:46:04.453" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="4eef09980c7f21b83c26c7f95862e625")&gt;</msg>
+<status status="PASS" starttime="20240608 21:45:54.602" endtime="20240608 21:46:04.453"/>
+</kw>
+<kw name="User Login" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:46:04.453" endtime="20240608 21:46:29.828"/>
+</kw>
+<kw name="Click On Next" library="web_auto">
+<arg>${driver}</arg>
+<status status="PASS" starttime="20240608 21:46:29.828" endtime="20240608 21:46:44.957"/>
+</kw>
+<kw name="Add Product To The Cart" library="web_auto">
+<arg>${driver}</arg>
+<status status="PASS" starttime="20240608 21:46:44.957" endtime="20240608 21:47:07.474"/>
+</kw>
+<status status="PASS" starttime="20240608 21:45:54.601" endtime="20240608 21:47:07.474"/>
+</kw>
+<tag>cart</tag>
+<tag>e-commerce</tag>
+<status status="PASS" starttime="20240608 21:45:54.600" endtime="20240608 21:47:07.475"/>
+</test>
+<test id="s1-t7" name="Checkout process">
+<kw name="Successfully_check_the_items_added_to_the_cart" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:47:23.061" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="314803b752700e8d2ef26210fde5fc22")&gt;</msg>
+<status status="PASS" starttime="20240608 21:47:07.477" endtime="20240608 21:47:23.061"/>
+</kw>
+<kw name="User Login" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:47:23.061" endtime="20240608 21:47:48.500"/>
+</kw>
+<kw name="Check Items Added To The Cart" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:47:56.798" level="INFO">Cart has items. Test Passed!</msg>
+<status status="PASS" starttime="20240608 21:47:48.500" endtime="20240608 21:47:56.799"/>
+</kw>
+<status status="PASS" starttime="20240608 21:47:07.477" endtime="20240608 21:47:56.799"/>
+</kw>
+<tag>check</tag>
+<tag>e-commerce</tag>
+<status status="PASS" starttime="20240608 21:47:07.476" endtime="20240608 21:47:56.801"/>
+</test>
+<test id="s1-t8" name="Verify that products are displayed">
+<kw name="Verify_that_products_are_displayed_correctly_on_the_homepage" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:48:02.557" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="c1e51572c5c56564128dbd87b5fd480c")&gt;</msg>
+<status status="PASS" starttime="20240608 21:47:56.807" endtime="20240608 21:48:02.557"/>
+</kw>
+<kw name="User Login" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:48:02.557" endtime="20240608 21:48:27.953"/>
+</kw>
+<kw name="Displayed Correctly On The Homepage" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:48:30.229" level="INFO">9 products are displayed on the homepage. Test Passed!</msg>
+<status status="PASS" starttime="20240608 21:48:27.953" endtime="20240608 21:48:30.230"/>
+</kw>
+<status status="PASS" starttime="20240608 21:47:56.806" endtime="20240608 21:48:30.230"/>
+</kw>
+<tag>display</tag>
+<tag>e-commerce</tag>
+<status status="PASS" starttime="20240608 21:47:56.805" endtime="20240608 21:48:30.231"/>
+</test>
+<test id="s1-t9" name="Verify that product categories can be navigated successfully">
+<kw name="Verify_that_product_categories_can_be_navigated_successfully" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:48:36.542" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="35ddd524b0c1e9ef28891c741165bfbb")&gt;</msg>
+<status status="PASS" starttime="20240608 21:48:30.239" endtime="20240608 21:48:36.542"/>
+</kw>
+<kw name="User Login" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:48:36.542" endtime="20240608 21:49:01.993"/>
+</kw>
+<kw name="Categories Can Be Navigated Successfully Phone" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:49:07.091" level="INFO">7 products are displayed on the homepage. Test Passed!</msg>
+<status status="PASS" starttime="20240608 21:49:01.993" endtime="20240608 21:49:07.091"/>
+</kw>
+<kw name="Categories Can Be Navigated Successfully Laptops" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:49:22.202" level="INFO">6 products are displayed on the homepage. Test Passed!</msg>
+<status status="PASS" starttime="20240608 21:49:07.091" endtime="20240608 21:49:22.202"/>
+</kw>
+<kw name="Categories Can Be Navigated Successfully Monitors" library="web_auto">
+<arg>${driver}</arg>
+<msg timestamp="20240608 21:49:37.300" level="INFO">2 products are displayed on the homepage. Test Passed!</msg>
+<status status="PASS" starttime="20240608 21:49:22.202" endtime="20240608 21:49:37.300"/>
+</kw>
+<status status="PASS" starttime="20240608 21:48:30.238" endtime="20240608 21:49:37.300"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>navigate</tag>
+<status status="PASS" starttime="20240608 21:48:30.235" endtime="20240608 21:49:37.301"/>
+</test>
+<test id="s1-t10" name="Logout process">
+<kw name="Successfully_log_out" library="web_auto_Keyword.">
+<kw name="Launch The Browser" library="web_auto">
+<var>${driver}</var>
+<arg>${app_config.url}</arg>
+<msg timestamp="20240608 21:49:44.325" level="INFO">${driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="1aff555bb8649d04d73c139f8b238f6b")&gt;</msg>
+<status status="PASS" starttime="20240608 21:49:37.305" endtime="20240608 21:49:44.325"/>
+</kw>
+<kw name="User Login" library="web_auto">
+<arg>${driver}</arg>
+<arg>${Login.name}</arg>
+<arg>${Login.password}</arg>
+<status status="PASS" starttime="20240608 21:49:44.325" endtime="20240608 21:50:09.731"/>
+</kw>
+<kw name="Logout" library="web_auto">
+<arg>${driver}</arg>
+<status status="PASS" starttime="20240608 21:50:09.732" endtime="20240608 21:50:16.156"/>
+</kw>
+<status status="PASS" starttime="20240608 21:49:37.304" endtime="20240608 21:50:16.156"/>
+</kw>
+<tag>e-commerce</tag>
+<tag>logout</tag>
+<status status="PASS" starttime="20240608 21:49:37.303" endtime="20240608 21:50:16.156"/>
+</test>
+<status status="PASS" starttime="20240608 21:43:08.390" endtime="20240608 21:50:16.158"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cart</stat>
+<stat pass="1" fail="0" skip="0">check</stat>
+<stat pass="1" fail="0" skip="0">display</stat>
+<stat pass="10" fail="0" skip="0">e-commerce</stat>
+<stat pass="1" fail="0" skip="0">empty</stat>
+<stat pass="1" fail="0" skip="0">login1</stat>
+<stat pass="1" fail="0" skip="0">login2</stat>
+<stat pass="1" fail="0" skip="0">logout</stat>
+<stat pass="1" fail="0" skip="0">navigate</stat>
+<stat pass="1" fail="0" skip="0">signup</stat>
+<stat pass="1" fail="0" skip="0">signup2</stat>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="0" id="s1" name="Web Auto">Web Auto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
